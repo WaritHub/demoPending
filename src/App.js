@@ -11,7 +11,6 @@ import { makeStyles } from "@fluentui/react-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 // @fortawesome/fontawesome-free, @fortawesome/free-solid-svg-icons, and @fortawesome/free-regular-svg-icons
-import ResponsivePagination from "react-responsive-pagination";
 initializeIcons();
 
 function App() {
@@ -154,11 +153,6 @@ function App() {
 
 
         </table>
-        <ResponsivePagination
-            current={currentPage}
-            total={totalPages}
-            onPageChange={setCurrentPage}
-          />
       </div>
     </FluentProvider>
   );

@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import React, { useState } from "react";
+import React from 'react';
 // import { initializeIcons } from "@fluentui/react";
 // import { Input } from "@fluentui/react-components";
 // import { FluentProvider, webLightTheme } from "@fluentui/react-components";
@@ -23,8 +23,8 @@ function App() {
       <div className="flex-container">
         <div className="text">รอการอนุมัติ</div>
         <div className="box">
-          <div className="clear-search">
-            <a href="#">ล้างการค้นหา</a>
+          <div className="clear-search">ล้างการค้นหา
+            {/* <a href="#">ล้างการค้นหา</a> */}
           </div>
           {/* <Input
             style={{ width: 300, margin: 20, marginTop: 15 }}
@@ -64,7 +64,7 @@ function App() {
         </div>
 
         {/* table */}
-        <table>
+        {/* <table>
           <thead>
             <tr>
               <th scope="col">รายการบันทึก</th>
@@ -89,7 +89,7 @@ function App() {
               </td>
               <td>
                 <div className="statusPending">
-                  {/* <FontAwesomeIcon icon={faClock} className="iconPending" /> */}
+                  <FontAwesomeIcon icon={faClock} className="iconPending" />
                   รอดำเนินการ
                   <div style={{ fontSize: "70%" }}>ลำดับอนุมัติ 1/2</div>
                 </div>
@@ -113,7 +113,7 @@ function App() {
               </td>
               <td>
                 <div className="statusPending">
-                  {/* <FontAwesomeIcon icon={faClock} className="iconPending" /> */}
+                  <FontAwesomeIcon icon={faClock} className="iconPending" />
                   รอดำเนินการ
                   <div style={{ fontSize: "70%" }} className="orderStatus">
                     ลำดับอนุมัติ 1/2
@@ -139,7 +139,7 @@ function App() {
               </td>
               <td>
                 <div className="statusPending">
-                  {/* <FontAwesomeIcon icon={faClock} className="iconPending" /> */}
+                  <FontAwesomeIcon icon={faClock} className="iconPending" />
                   รอดำเนินการ
                   <div style={{ fontSize: "70%" }} className="orderStatus">
                     ลำดับอนุมัติ 1/2
@@ -154,7 +154,7 @@ function App() {
 
 
 
-        </table>
+        </table> */}
         {/* <ResponsivePagination
             current={currentPage}
             total={totalPages}

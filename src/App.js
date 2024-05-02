@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from "react";
-import { initializeIcons } from "@fluentui/react";
+// import { initializeIcons } from "@fluentui/react";
 import { Input } from "@fluentui/react-components";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { createTheme } from "@fluentui/react";
@@ -11,7 +11,7 @@ import { makeStyles } from "@fluentui/react-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 // @fortawesome/fontawesome-free, @fortawesome/free-solid-svg-icons, and @fortawesome/free-regular-svg-icons
-initializeIcons();
+// initializeIcons();
 
 function App() {
   const [currentPage, setCurrentPage] = useState(4);

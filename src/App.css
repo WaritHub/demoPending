@@ -1,241 +1,95 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap");
-
 * {
   box-sizing: border-box;
-  font-family: "IBM Plex Sans Thai", sans-serif;
 }
 
-#root {
-  display: flex;
-  width: 90%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin: 4rem auto;
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.text {
-  font-family: "IBM Plex Sans Thai", sans-serif;
-  font-size: 32px;
-  font-weight: 500;
-  text-align: left;
-  padding: 20px 0;
+[class*="col-"] {
+  float: left;
+  padding: 15px;
 }
 
-.text1 {
-  font-family: "IBM Plex Sans Thai", sans-serif;
-  font-size: 32px;
-  font-weight: 500;
-  text-align: left;
-  display: inline-block;
+html {
+  font-family: "Lucida Sans", sans-serif;
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-
-.clear-search {
-  font-family: "IBM Plex Sans Thai", sans-serif;
-  font-size: 12px;
-  text-align: right;
-  text-decoration: underline;
-  margin-right: 2vh;
-  padding-top: 10px;
-}
-.box {
-  text-align: center;
-  border-radius: 9px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #d1d1d1;
-  padding: 1rem;
-  flex: 100%;
-}
-
-.status {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: -25px;
-}
-
-/* pagination */
-
-.pagination {
-  justify-content: center;
-  padding-left: 0;
-  list-style: none;
-  margin-left: auto;
-  display: flex;
-}
-
-.page-link {
-  display: block;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 0 2px;
-  text-decoration: none;
-  color: #007bff;
-}
-
-a.page-link:hover {
-  background-color: #cccccc;
-}
-
-.page-item.active .page-link {
+.header {
+  background-color: #9933cc;
   color: #ffffff;
-  background-color: #007bff;
+  padding: 15px;
 }
 
-
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
-@media (max-width: 600px) {
-  .box {
-    width: auto;
-    padding: auto;
-  }
-  .status {
-    margin-top: 25px;
-    justify-content: flex-start;
-  }
-  .boxlist {
-    margin-top: 25px;
-  }
-}
-
-.statusPending {
-  background-color: #dbecfd;
-  padding: 5px 5px;
-  border-radius: 40px;
-  color: #003389;
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.iconPending {
-  color: #003389;
-  padding-right: 10px;
-  margin-top: 5px;
-}
-
-.orderStatus{
+.menu ul {
+  list-style-type: none;
+  margin: 0;
   padding: 0;
 }
-/* table */
-table {
-  margin-top: 2rem;
-  border: 2px solid #d1d1d1;
-  border-radius: 9px;
-  /* border-collapse: collapse; */
-  border-spacing: 0;
-  padding-top: 1rem;
-  /* padding-bottom: 2rem; */
-  /* width: 100%; */
-  table-layout: auto;
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-table tr {
-  /* background-color: white; */
-  border: 1px solid #d1d1d1;
-  padding: 0.5m;
+.menu li:hover {
+  background-color: #0099cc;
 }
 
-table th,
-table td {
-  padding: 1em;
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
   text-align: center;
-  border-bottom: 1px solid #d1d1d1;
-  font-size: 18px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-table th {
-  font-size: 24px;
-  font-weight: 500;
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
 }
 
-@media screen and (max-width: 600px) {
-  table {
-    border: 0;
-  }
-
-  table caption {
-    font-size: 1.3em;
-  }
-
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    position: absolute;
-    width: 1px;
-  }
-
-  table tr {
-    /* border-bottom: 3px solid #ddd; */
-    display: block;
-    margin-bottom: 2rem;
-    border-radius: 9px;
-    padding: 10px 0;
-  }
-
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: 14px;
-    text-align: left;
-  }
-
-  table td::before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-    content: attr(data-label);
-    /* float: inline-end; */
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding-right: 10px;
-  }
-
-  table td:last-child {
-    border-bottom: 0;
-  }
-
-  /* .statusPending{
-    padding: 5px 20px;
-    display: inline-block;
-    text-align: center;
-    font-size: 15px;
-    } */
-
-  .statusPending {
-    display: inline-flex;
-    text-align: left;
-    font-size: 15px;
-    padding: 5px 40px;
-    margin: auto;
-  }
-
-  .iconPending {
-    margin: auto;
-  }
-
-  .orderStatus{
-    margin-left: 10px;
-  }
-
-  .pagination {
-    padding-bottom: 10px;
-    margin-top: -15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
 }
 
-
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}

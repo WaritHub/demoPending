@@ -1,31 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from "react";
-import { initializeIcons } from "@fluentui/react";
-import { Input } from "@fluentui/react-components";
-import { FluentProvider, webLightTheme } from "@fluentui/react-components";
-import { createTheme } from "@fluentui/react";
-import { Dropdown, Option } from "@fluentui/react-components";
-import { DatePicker } from "@fluentui/react-datepicker-compat";
-import { makeStyles } from "@fluentui/react-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-regular-svg-icons";
-// @fortawesome/fontawesome-free, @fortawesome/free-solid-svg-icons, and @fortawesome/free-regular-svg-icons
-import ResponsivePagination from "react-responsive-pagination";
-initializeIcons();
+// import { initializeIcons } from "@fluentui/react";
+// import { Input } from "@fluentui/react-components";
+// import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+// import { createTheme } from "@fluentui/react";
+// import { Dropdown, Option } from "@fluentui/react-components";
+// import { DatePicker } from "@fluentui/react-datepicker-compat";
+// import { makeStyles } from "@fluentui/react-components";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faClock } from "@fortawesome/free-regular-svg-icons";
+// // @fortawesome/fontawesome-free, @fortawesome/free-solid-svg-icons, and @fortawesome/free-regular-svg-icons
+// import ResponsivePagination from "react-responsive-pagination";
+// initializeIcons();
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(4);
-  const totalPages = 5;
+  // const [currentPage, setCurrentPage] = useState(4);
+  // const totalPages = 5;
   return (
-    <FluentProvider theme={webLightTheme}>
+    // <FluentProvider theme={webLightTheme}>
+    <div>
       <div className="flex-container">
         <div className="text">รอการอนุมัติ</div>
         <div className="box">
           <div className="clear-search">
             <a href="#">ล้างการค้นหา</a>
           </div>
-          <Input
+          {/* <Input
             style={{ width: 300, margin: 20, marginTop: 15 }}
             placeholder="ค้นหารายการ"
           />
@@ -44,7 +45,7 @@ function App() {
             allowTextInput
             placeholder="ช่วงเวลา"
             style={{ width: 300, margin: 20, marginTop: 15 }}
-          />
+          /> */}
         </div>
       </div>
 
@@ -53,13 +54,13 @@ function App() {
           รายการอนุมัติ
         </div>
         <div className="status">
-          <Dropdown placeholder="เลือกสถานะ" appearance="outline">
+          {/* <Dropdown placeholder="เลือกสถานะ" appearance="outline">
             <Option>ทั้งหมด</Option>
             <Option>อนุมัติ</Option>
             <Option>รอดำเนินการ</Option>
             <Option>รอการแก้ไข</Option>
             <Option>ไม่อนุมัติ</Option>
-          </Dropdown>
+          </Dropdown> */}
         </div>
 
         {/* table */}
@@ -88,7 +89,7 @@ function App() {
               </td>
               <td>
                 <div className="statusPending">
-                  <FontAwesomeIcon icon={faClock} className="iconPending" />
+                  {/* <FontAwesomeIcon icon={faClock} className="iconPending" /> */}
                   รอดำเนินการ
                   <div style={{ fontSize: "70%" }}>ลำดับอนุมัติ 1/2</div>
                 </div>
@@ -112,7 +113,7 @@ function App() {
               </td>
               <td>
                 <div className="statusPending">
-                  <FontAwesomeIcon icon={faClock} className="iconPending" />
+                  {/* <FontAwesomeIcon icon={faClock} className="iconPending" /> */}
                   รอดำเนินการ
                   <div style={{ fontSize: "70%" }} className="orderStatus">
                     ลำดับอนุมัติ 1/2
@@ -138,7 +139,7 @@ function App() {
               </td>
               <td>
                 <div className="statusPending">
-                  <FontAwesomeIcon icon={faClock} className="iconPending" />
+                  {/* <FontAwesomeIcon icon={faClock} className="iconPending" /> */}
                   รอดำเนินการ
                   <div style={{ fontSize: "70%" }} className="orderStatus">
                     ลำดับอนุมัติ 1/2
@@ -154,13 +155,14 @@ function App() {
 
 
         </table>
-        <ResponsivePagination
+        {/* <ResponsivePagination
             current={currentPage}
             total={totalPages}
             onPageChange={setCurrentPage}
-          />
+          /> */}
       </div>
-    </FluentProvider>
+    {/* </FluentProvider> */}
+    </div>
   );
 }
 

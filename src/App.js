@@ -1,61 +1,166 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-// import { initializeIcons } from "@fluentui/react";
-// import { Input } from "@fluentui/react-components";
-// import { FluentProvider, webLightTheme } from "@fluentui/react-components";
-// import { createTheme } from "@fluentui/react";
-// import { Dropdown, Option } from "@fluentui/react-components";
-// import { DatePicker } from "@fluentui/react-datepicker-compat";
-// import { makeStyles } from "@fluentui/react-components";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faClock } from "@fortawesome/free-regular-svg-icons";
-// // @fortawesome/fontawesome-free, @fortawesome/free-solid-svg-icons, and @fortawesome/free-regular-svg-icons
-// import ResponsivePagination from "react-responsive-pagination";
-// initializeIcons();
+import { initializeIcons } from "@fluentui/react";
+import { Input } from "@fluentui/react-components";
+import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import { createTheme } from "@fluentui/react";
+import { Dropdown, Option } from "@fluentui/react-components";
+import { DatePicker } from "@fluentui/react-datepicker-compat";
+import { makeStyles } from "@fluentui/react-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
+// @fortawesome/fontawesome-free, @fortawesome/free-solid-svg-icons, and @fortawesome/free-regular-svg-icons
+import ResponsivePagination from "react-responsive-pagination";
+initializeIcons();
 
 function App() {
-  // const [currentPage, setCurrentPage] = useState(4);
-  // const totalPages = 5;
+  const [currentPage, setCurrentPage] = useState(4);
+  const totalPages = 5;
   return (
-    // <FluentProvider theme={webLightTheme}>
-    <div>
-     <div class="header">
-  <h1>Chania</h1>
-</div>
+    <FluentProvider theme={webLightTheme}>
+      <div className="flex-container">
+        <div className="text">รอการอนุมัติ</div>
+        <div className="box">
+          <div className="clear-search">
+            <a href="#">ล้างการค้นหา</a>
+          </div>
+          <Input
+            style={{ width: 300, margin: 20, marginTop: 15 }}
+            placeholder="ค้นหารายการ"
+          />
+          <Dropdown
+            style={{ width: 300, margin: 20, marginTop: 15 }}
+            placeholder="ประเภทของเอกสาร"
+            appearance="outline"
+          >
+            <Option>แบบขออนุมัติภายนอก</Option>
+            <Option>แบบขออนุมัติภายใน</Option>
+            <Option>แบบขออนุมัติการซื้อ</Option>
+            <Option>เอกสารอัปโหลด</Option>
+            <Option>สัญญา</Option>
+          </Dropdown>
+          <DatePicker
+            allowTextInput
+            placeholder="ช่วงเวลา"
+            style={{ width: 300, margin: 20, marginTop: 15 }}
+          />
+        </div>
+      </div>
 
-<div class="row">
-  <div class="col-3 col-s-3 menu">
-    <ul>
-      <li>The Flight</li>
-      <li>The City</li>
-      <li>The Island</li>
-      <li>The Food</li>
-    </ul>
-  </div>
+      <div className="flex-container">
+        <div className="text1" style={{ marginTop: 50 }}>
+          รายการอนุมัติ
+        </div>
+        <div className="status">
+          <Dropdown placeholder="เลือกสถานะ" appearance="outline">
+            <Option>ทั้งหมด</Option>
+            <Option>อนุมัติ</Option>
+            <Option>รอดำเนินการ</Option>
+            <Option>รอการแก้ไข</Option>
+            <Option>ไม่อนุมัติ</Option>
+          </Dropdown>
+        </div>
 
-  <div class="col-6 col-s-9">
-    <h1>The City</h1>
-    <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
-  </div>
+        {/* table */}
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">รายการบันทึก</th>
+              <th scope="col">สร้างโดย</th>
+              <th scope="col">สถานะ</th>
+              <th scope="col">ช่วงเวลา</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
+                  ทดสอบขออนุมัติการซื้อ 1
+                </div>
+                <div style={{ fontSize: "90%" }}>DEFAULT-PR-202404-0001</div>
+              </td>
+              <td>
+                <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
+                  Lorem Ipsum
+                </div>
+                <div style={{ fontSize: "90%" }}>แผนก : ไอที</div>
+              </td>
+              <td>
+                <div className="statusPending">
+                  <FontAwesomeIcon icon={faClock} className="iconPending" />
+                  รอดำเนินการ
+                  <div style={{ fontSize: "70%" }}>ลำดับอนุมัติ 1/2</div>
+                </div>
+              </td>
+              <td data-label="ช่วงเวลา" style={{ fontWeight: "bold" }}>
+                12/04/2024
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">
+                <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
+                  ทดสอบขออนุมัติการซื้อ 1
+                </div>
+                <div style={{ fontSize: "90%" }}>DEFAULT-PR-202404-0001</div>
+              </td>
+              <td>
+                <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
+                  Lorem Ipsum
+                </div>
+                <div style={{ fontSize: "90%" }}>แผนก : ไอที</div>
+              </td>
+              <td>
+                <div className="statusPending">
+                  <FontAwesomeIcon icon={faClock} className="iconPending" />
+                  รอดำเนินการ
+                  <div style={{ fontSize: "70%" }} className="orderStatus">
+                    ลำดับอนุมัติ 1/2
+                  </div>
+                </div>
+              </td>
+              <td data-label="ช่วงเวลา" style={{ fontWeight: "bold" }}>
+                12/04/2024
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">
+                <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
+                  ทดสอบขออนุมัติการซื้อ 1
+                </div>
+                <div style={{ fontSize: "90%" }}>DEFAULT-PR-202404-0001</div>
+              </td>
+              <td>
+                <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
+                  Lorem Ipsum
+                </div>
+                <div style={{ fontSize: "90%" }}>แผนก : ไอที</div>
+              </td>
+              <td>
+                <div className="statusPending">
+                  <FontAwesomeIcon icon={faClock} className="iconPending" />
+                  รอดำเนินการ
+                  <div style={{ fontSize: "70%" }} className="orderStatus">
+                    ลำดับอนุมัติ 1/2
+                  </div>
+                </div>
+              </td>
+              <td data-label="ช่วงเวลา" style={{ fontWeight: "bold" }}>
+                12/04/2024
+              </td>
+            </tr>
+          </tbody>
 
-  <div class="col-3 col-s-12">
-    <div class="aside">
-      <h2>What?</h2>
-      <p>Chania is a city on the island of Crete.</p>
-      <h2>Where?</h2>
-      <p>Crete is a Greek island in the Mediterranean Sea.</p>
-      <h2>How?</h2>
-      <p>You can reach Chania airport from all over Europe.</p>
-    </div>
-  </div>
-</div>
 
-<div class="footer">
-  <p>Resize the browser window to see how the content respond to the resizing.</p>
-</div>
 
-    </div>
+        </table>
+        <ResponsivePagination
+            current={currentPage}
+            total={totalPages}
+            onPageChange={setCurrentPage}
+          />
+      </div>
+    </FluentProvider>
   );
 }
 

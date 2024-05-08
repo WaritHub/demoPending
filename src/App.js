@@ -5,10 +5,10 @@ import { useState } from "react";
 import { initializeIcons } from "@fluentui/react";
 import { Input } from "@fluentui/react-components";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
-import { createTheme } from "@fluentui/react";
+// import { createTheme } from "@fluentui/react";
 import { Dropdown, Option } from "@fluentui/react-components";
 import { DatePicker } from "@fluentui/react-datepicker-compat";
-import { makeStyles } from "@fluentui/react-components";
+// import { makeStyles } from "@fluentui/react-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 // @fortawesome/fontawesome-free, @fortawesome/free-solid-svg-icons, and @fortawesome/free-regular-svg-icons
@@ -24,7 +24,7 @@ function App() {
         <div className="text">รอการอนุมัติ</div>
         <div className="box">
           <div className="clear-search">
-            <a href="#">ล้างการค้นหา</a>
+            ล้างการค้นหา
           </div>
           <Input
             style={{ width: 300, margin: 20, marginTop: 15 }}
@@ -99,12 +99,12 @@ function App() {
               </td>
             </tr>
             <tr>
-              <td scope="row">
+              <th scope="row">
                 <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
                   ทดสอบขออนุมัติการซื้อ 1
                 </div>
                 <div style={{ fontSize: "90%" }}>DEFAULT-PR-202404-0001</div>
-              </td>
+              </th>
               <td>
                 <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
                   Lorem Ipsum
@@ -125,12 +125,12 @@ function App() {
               </td>
             </tr>
             <tr>
-              <td scope="row">
+              <th scope="row">
                 <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
                   ทดสอบขออนุมัติการซื้อ 1
                 </div>
                 <div style={{ fontSize: "90%" }}>DEFAULT-PR-202404-0001</div>
-              </td>
+              </th>
               <td>
                 <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
                   Lorem Ipsum

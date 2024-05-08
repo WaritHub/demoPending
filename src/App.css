@@ -248,8 +248,8 @@ table td {
 }
 
 table th {
-  font-size: 24px;
-  font-weight: 500;
+  /* font-size: 24px;
+  font-weight: 500; */
 }
 
 @media screen and (max-width: 600px) {

@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fluentui/react": "^8.118.2",
+    "@fluentui/react-components": "^9.49.2",
+    "@fluentui/react-datepicker-compat": "^0.4.35",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-responsive-pagination": "^2.4.4",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },

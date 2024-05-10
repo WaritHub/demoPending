@@ -20,11 +20,11 @@ const useStyles = makeStyles({
   root: {
     margin: "10px",
     display: "inline-block", 
-   "@media (max-width: 800px)": {
+   "@media (max-width: 1000px)": {
     display: "flex",
     flexDirection: "column",
     marginBottom: "20px"
-  }
+  },
   },
   status: {
     display: "flex",

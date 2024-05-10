@@ -13,11 +13,45 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 // @fortawesome/fontawesome-free, @fortawesome/free-solid-svg-icons, and @fortawesome/free-regular-svg-icons
 import ResponsivePagination from "react-responsive-pagination";
+import {makeStyles} from "@fluentui/react-components";
 initializeIcons();
 
+const useStyles = makeStyles({
+  root: {
+    margin: "10px",
+    display: "inline-block", 
+   "@media (max-width: 800px)": {
+    display: "flex",
+    flexDirection: "column",
+    marginBottom: "20px"
+  }
+  },
+  status: {
+    display: "flex",
+    marginTop: "-25px",
+    alignItems: "center",
+    justifyContent: "flex-end",
+   "@media (max-width: 600px)": {
+    display: "block",
+    flexDirection: "column",
+    marginTop: "25px",
+  }
+  },
+  orderProcess: {
+    fontSize: "70%",
+  },
+  statusText: {
+    display: "inline-block", 
+    "@media (max-width: 600px)": {
+      marginRight: "5px"
+    }
+  }
+});
 function App() {
   const [currentPage, setCurrentPage] = useState(4);
   const totalPages = 5;
+  const styles = useStyles();
+
   return (
     <FluentProvider theme={webLightTheme}>
       <div className="flex-container">
@@ -26,26 +60,21 @@ function App() {
           <div className="clear-search">
             ล้างการค้นหา
           </div>
-          <Input
-            style={{ width: 300, margin: 20, marginTop: 15 }}
-            placeholder="ค้นหารายการ"
-          />
-          <Dropdown
-            style={{ width: 300, margin: 20, marginTop: 15 }}
-            placeholder="ประเภทของเอกสาร"
-            appearance="outline"
-          >
+          <div className={styles.root}>
+            <Input placeholder="ค้นหารายการ"/>
+            </div>
+          <div className={styles.root}>
+          <Dropdown placeholder="ประเภทของเอกสาร" appearance="outline">
             <Option>แบบขออนุมัติภายนอก</Option>
             <Option>แบบขออนุมัติภายใน</Option>
             <Option>แบบขออนุมัติการซื้อ</Option>
             <Option>เอกสารอัปโหลด</Option>
             <Option>สัญญา</Option>
           </Dropdown>
-          <DatePicker
-            allowTextInput
-            placeholder="ช่วงเวลา"
-            style={{ width: 300, margin: 20, marginTop: 15 }}
-          />
+          </div>
+          <div className={styles.root}>
+            <DatePicker allowTextInput placeholder="ช่วงเวลา"/>
+          </div>
         </div>
       </div>
 
@@ -53,7 +82,7 @@ function App() {
         <div className="text1" style={{ marginTop: 50 }}>
           รายการอนุมัติ
         </div>
-        <div className="status">
+        <div className={styles.status}>
           <Dropdown placeholder="เลือกสถานะ" appearance="outline">
             <Option>ทั้งหมด</Option>
             <Option>อนุมัติ</Option>
@@ -90,7 +119,7 @@ function App() {
               <td>
                 <div className="statusPending">
                   <FontAwesomeIcon icon={faClock} className="iconPending" />
-                  รอดำเนินการ
+                  <div className={styles.statusText}>รอดำเนินการ</div>
                   <div style={{ fontSize: "70%" }}>ลำดับอนุมัติ 1/2</div>
                 </div>
               </td>
@@ -98,13 +127,14 @@ function App() {
                 12/04/2024
               </td>
             </tr>
+            {/* 2 */}
             <tr>
-              <th scope="row">
+              <td>
                 <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
                   ทดสอบขออนุมัติการซื้อ 1
                 </div>
                 <div style={{ fontSize: "90%" }}>DEFAULT-PR-202404-0001</div>
-              </th>
+              </td>
               <td>
                 <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
                   Lorem Ipsum
@@ -114,23 +144,22 @@ function App() {
               <td>
                 <div className="statusPending">
                   <FontAwesomeIcon icon={faClock} className="iconPending" />
-                  รอดำเนินการ
-                  <div style={{ fontSize: "70%" }} className="orderStatus">
-                    ลำดับอนุมัติ 1/2
-                  </div>
+                  <div className={styles.statusText}>รอดำเนินการ</div>
+                  <div style={{ fontSize: "70%" }}>ลำดับอนุมัติ 1/2</div>
                 </div>
               </td>
               <td data-label="ช่วงเวลา" style={{ fontWeight: "bold" }}>
                 12/04/2024
               </td>
             </tr>
+            {/* 3 */}
             <tr>
-              <th scope="row">
+              <td>
                 <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
                   ทดสอบขออนุมัติการซื้อ 1
                 </div>
                 <div style={{ fontSize: "90%" }}>DEFAULT-PR-202404-0001</div>
-              </th>
+              </td>
               <td>
                 <div style={{ fontWeight: "bold", paddingBottom: 10 }}>
                   Lorem Ipsum
@@ -140,10 +169,8 @@ function App() {
               <td>
                 <div className="statusPending">
                   <FontAwesomeIcon icon={faClock} className="iconPending" />
-                  รอดำเนินการ
-                  <div style={{ fontSize: "70%" }} className="orderStatus">
-                    ลำดับอนุมัติ 1/2
-                  </div>
+                  <div className={styles.statusText}>รอดำเนินการ</div>
+                  <div style={{ fontSize: "70%" }}>ลำดับอนุมัติ 1/2</div>
                 </div>
               </td>
               <td data-label="ช่วงเวลา" style={{ fontWeight: "bold" }}>
